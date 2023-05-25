@@ -35,7 +35,7 @@ class ReverseTest extends TestCase {
     */
 
     public function testNotString() :void {
-        $result = $this->object->reverse(NULL);
+        $result = $this->object->reverse(123);
         $this->assertNull($result);
     }
 }
