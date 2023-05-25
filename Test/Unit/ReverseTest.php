@@ -3,7 +3,6 @@ declare(strict_types=1);
 namespace App\Test\Unit;
 
 use App\App\Reverse;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -21,21 +20,20 @@ class ReverseTest extends TestCase {
         $this->object = new Reverse();
     }
 
-    /**
-    * @covers Reverse::reverse
-    */
-
-    public function testString() :void {
-        $result = $this->object->reverse($this->str);
-        $this->assertNotSame($this->object::class, $result);
+    public function addDataProvider() {
+        return array(
+            array("gdsfh fszaf","hfsdg fazsf"),
+            array("1234515", "1234515"),
+        );
     }
 
     /**
+    * @dataProvider addDataProvider
     * @covers Reverse::reverse
     */
 
-    public function testNotString() :void {
-        $result = $this->object->reverse(123);
-        $this->assertNull($result);
+    public function testString($a, $b) :void {
+        $result = $this->object->reverse($a);
+        $this->assertSame($result, $b);
     }
 }

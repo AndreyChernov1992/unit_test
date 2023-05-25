@@ -2,11 +2,10 @@
 namespace App\App;
 
 class Reverse {
-    public function reverse($string) {
-        if(is_string($string)) {
-            $reversedStrings = explode(" ", $string);
+    public function reverse(string $string) :string {
+        $reversedStrings = explode(" ", $string);
 
-            foreach ($reversedStrings as &$word) {
+        foreach ($reversedStrings as &$word) {
             $chars = str_split($word, 1);
             $filteredChars = [];
             foreach (array_reverse($chars) as $char) {
@@ -21,11 +20,7 @@ class Reverse {
                 $char = array_shift($filteredChars);
             }
             $word = implode("", $chars);
-            }
-            return implode(" ", $reversedStrings);
         }
-        else {
-            return NULL;
-        }
+        return implode(" ", $reversedStrings);
     }
 }
