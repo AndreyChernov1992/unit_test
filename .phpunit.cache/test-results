@@ -1,0 +1,1 @@
+{"version":1,"defects":{"App\\Test\\Unit\\ReverseTest::testString":5,"App\\Test\\Unit\\ReverseTest::testNotString":5},"times":{"App\\Test\\Unit\\ReverseTest::testString":0.105,"App\\Test\\Unit\\ReverseTest::testNotString":0.004}}
