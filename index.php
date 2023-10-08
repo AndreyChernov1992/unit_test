@@ -12,14 +12,16 @@ require_once __DIR__ . "/vendor/autoload.php";
 use App\App\Reverse;
 
 $str = "";
-if(isset($_POST["string"])){
-  
+
+if(isset($_POST["string"]))
+{
     $str = $_POST["string"];
 }
 
 $reverse = new Reverse($str);
 
 echo $reverse->reverse($str);
+
 ?>
 <h3>Input form</h3>
 <form method="POST">
